@@ -1,0 +1,27 @@
+{
+  "name": "angular-ladda-lw",
+  "version": "0.1.0",
+  "description": "A lightweight, native Angular ladda indicator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run-script copy && npm run-script uglify && npm run-script sass && npm run-script sass-min",
+    "copy": "cp src/angular-ladda-lw.js dist/angular-ladda-lw.js",
+    "uglify": "uglifyjs --compress --mangle --output dist/angular-ladda-lw.min.js -- src/angular-ladda-lw.js",
+    "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style expanded src/angular-ladda-lw.scss dist/angular-ladda-lw.css",
+    "sass-min": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style compressed src/angular-ladda-lw.scss dist/angular-ladda-lw.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeharding/angular-ladda-lw.git"
+  },
+  "author": "Alexander Harding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aeharding/angular-ladda-lw/issues"
+  },
+  "homepage": "https://github.com/aeharding/angular-ladda-lw#readme",
+  "devDependencies": {
+    "node-bourbon": "^4.2.3"
+  }
+}
