@@ -1,0 +1,114 @@
+@import "bourbon";
+
+@mixin loading($color, $speed: 400ms, $width: 2px) {
+  @include animation(loading-bar-spinner $speed linear infinite);
+
+  border:  solid $width transparent;
+  border-top-color:  $color;
+  border-left-color: $color;
+  border-radius: 50%;
+}
+
+
+$animation-height: 1em;
+
+// .ladda-lw__loading - the spinenr
+// .ladda-lw__text    - the wrapped button text
+
+.ladda-lw { // added to the button
+  position: relative;
+  overflow: hidden;
+}
+
+.ladda-lw__loading {
+  opacity: 0;
+
+  &::after {
+    @include loading(inherit, 400ms, 2px);
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.2em;
+    width: 1.2em;
+  }
+}
+
+.ladda-lw__loading-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 1.2em;
+  width: 1.2em;
+  transform: translate(-50%, -50%);
+}
+
+.ladda-lw__loading--up {
+  @include animation(loading-up 200ms ease);
+  @include animation-fill-mode(forwards);
+}
+
+.ladda-lw__loading--up-remove {
+  @include animation(loading-down 200ms ease);
+  @include animation-fill-mode(forwards);
+}
+
+.ladda-lw__text--up-remove {
+  @include animation(text-down 200ms ease);
+  @include animation-fill-mode(forwards);    
+}
+
+.ladda-lw__text--up {
+  @include animation(text-up 200ms ease);
+  @include animation-fill-mode(forwards);
+}
+
+@include keyframes(text-up) {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+    display: block;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -$animation-height);
+    display: none;
+  }
+}
+
+@include keyframes(text-down) {
+    0% {
+      opacity: 0;
+      transform: translate(0, -$animation-height);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+}
+
+@include keyframes(loading-up) {
+    0% {
+      opacity: 0;
+      transform: translate(0, $animation-height);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+}
+
+@include keyframes(loading-down) {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(0, $animation-height);
+    }
+}
