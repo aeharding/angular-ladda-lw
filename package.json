@@ -4,10 +4,13 @@
   "description": "A lightweight, native Angular ladda indicator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run-script copy && npm run-script uglify && npm run-script sass && npm run-script sass-min",
-    "copy": "cp src/angular-ladda-lw.js dist/angular-ladda-lw.js",
-    "uglify": "uglifyjs --compress --mangle --output dist/angular-ladda-lw.min.js -- src/angular-ladda-lw.js",
+    "test": "npm run-script lint",
+    "lint": "npm run-script lint:js && npm run-script lint:sass",
+    "lint:js": "./node_modules/.bin/eslint src/*.js",
+    "lint:sass": "sass-lint src/*.scss --config .sass-lint.yml -v",
+    "start": "npm run-script sass && npm run-script sass-min && npm run-script babel && npm run-script uglify",
+    "babel": "babel src/angular-ladda-lw.js --out-file dist/angular-ladda-lw.js",
+    "uglify": "uglifyjs --compress --mangle --output dist/angular-ladda-lw.min.js -- dist/angular-ladda-lw.js",
     "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style expanded src/angular-ladda-lw.scss dist/angular-ladda-lw.css",
     "sass-min": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style compressed src/angular-ladda-lw.scss dist/angular-ladda-lw.min.css"
   },
@@ -22,6 +25,11 @@
   },
   "homepage": "https://github.com/aeharding/angular-ladda-lw#readme",
   "devDependencies": {
-    "node-bourbon": "^4.2.3"
+    "babel-eslint": "^4.1.6",
+    "eslint": "^1.10.3",
+    "eslint-config-defaults": "^8.0.2",
+    "eslint-plugin-react": "^3.15.0",
+    "node-bourbon": "^4.2.3",
+    "sass-lint": "^1.4.0"
   }
 }
