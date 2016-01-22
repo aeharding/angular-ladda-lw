@@ -1,0 +1,5 @@
+language: node_js
+node_js:
+  - "4.1"
+before_install: npm install -g babel-cli node-sass uglify-js sass-lint eslint
+install: npm install

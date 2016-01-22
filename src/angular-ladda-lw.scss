@@ -1,4 +1,4 @@
-@import "bourbon";
+@import 'bourbon';
 
 @mixin loading($color, $speed: 400ms, $width: 2px) {
   @include animation(loading-bar-spinner $speed linear infinite);
@@ -70,6 +70,7 @@ $animation-height: 1em;
     transform: translate(0, 0);
     display: block;
   }
+
   100% {
     opacity: 0;
     transform: translate(0, -$animation-height);
@@ -78,37 +79,37 @@ $animation-height: 1em;
 }
 
 @include keyframes(text-down) {
-    0% {
-      opacity: 0;
-      transform: translate(0, -$animation-height);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(0, -$animation-height);
+  }
 
-    100% {
-      opacity: 1;
-      transform: translate(0, 0);
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
     }
 }
 
 @include keyframes(loading-up) {
-    0% {
-      opacity: 0;
-      transform: translate(0, $animation-height);
-    }
+  0% {
+    opacity: 0;
+    transform: translate(0, $animation-height);
+  }
 
-    100% {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
 
 @include keyframes(loading-down) {
-    0% {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 
-    100% {
-      opacity: 0;
-      transform: translate(0, $animation-height);
-    }
+  100% {
+    opacity: 0;
+    transform: translate(0, $animation-height);
+  }
 }
