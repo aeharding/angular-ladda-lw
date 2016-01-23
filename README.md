@@ -35,6 +35,25 @@ bower_components/angular-ladda-lw/dist/angular-ladda-lw.css
 
 You can also use the `angular-ladda-lw.min.*` if you want.
 
+### Module name
+```js
+angular.module('myApp', ['angular-ladda-lw']);
+```
+
+### Example
+```html
+<button class="my-button" ladda="ctrl.loading" ng-click="ctrl.doThing(thing)">Hello, world!</button>
+```
+```js
+this.doThing = thing => {
+  this.loading = true;
+  MyService.doThing(thing).then(res => {
+   this.loading = false;
+   // TODO
+  });
+}
+```
+
 ## Develop
 
 ```
