@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/aeharding/angular-ladda-lw.svg?branch=master)](https://travis-ci.org/aeharding/angular-ladda-lw)
 
-A lightweight ladda alternative for Angular.
+A lightweight ladda alternative for Angular. [[Demo]](http://aeharding.github.io/angular-ladda-lw/)
 
 ### Requirements
 
