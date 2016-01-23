@@ -1,6 +1,6 @@
 {
   "name": "angular-ladda-lw",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A lightweight, native Angular ladda indicator",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
     "eslint": "^1.10.3",
     "eslint-config-defaults": "^8.0.2",
     "eslint-plugin-react": "^3.15.0",
+    "karma": "^0.13.19",
     "node-bourbon": "^4.2.3",
     "sass-lint": "^1.4.0"
   }
