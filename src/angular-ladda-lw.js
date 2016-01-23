@@ -1,4 +1,4 @@
-angular.module('ladda-lw', ['ngAnimate']).directive('ladda', function laddaDirective() {
+angular.module('angular-ladda-lw', ['ngAnimate']).directive('ladda', function laddaDirective() {
   return {
     restrict: 'A',
     scope: {
