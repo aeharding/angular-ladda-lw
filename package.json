@@ -9,7 +9,7 @@
     "lint:js": "./node_modules/.bin/eslint src/*.js",
     "lint:sass": "sass-lint src/*.scss --config .sass-lint.yml -v",
     "start": "npm run-script sass && npm run-script sass-min && npm run-script babel && npm run-script uglify",
-    "babel": "babel src/angular-ladda-lw.js --out-file dist/angular-ladda-lw.js",
+    "babel": "babel --presets es2015 src/angular-ladda-lw.js --out-file dist/angular-ladda-lw.js",
     "uglify": "uglifyjs --compress --mangle --output dist/angular-ladda-lw.min.js -- dist/angular-ladda-lw.js",
     "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style expanded src/angular-ladda-lw.scss dist/angular-ladda-lw.css",
     "sass-min": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style compressed src/angular-ladda-lw.scss dist/angular-ladda-lw.min.css"
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/aeharding/angular-ladda-lw#readme",
   "devDependencies": {
     "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-config-defaults": "^8.0.2",
     "eslint-plugin-react": "^3.15.0",
