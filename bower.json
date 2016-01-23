@@ -1,0 +1,19 @@
+{
+  "name": "angular-ladda-lw",
+  "description": "A lightweight, native Angular ladda indicator",
+  "main": "index.js",
+  "authors": [
+    "Alexander Harding"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/aeharding/angular-ladda-lw",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ]
+}
