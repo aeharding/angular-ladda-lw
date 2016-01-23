@@ -1,6 +1,8 @@
 # angular-ladda-lw
 
 [![Build Status](https://travis-ci.org/aeharding/angular-ladda-lw.svg?branch=master)](https://travis-ci.org/aeharding/angular-ladda-lw)
+[![Coverage Status](https://coveralls.io/repos/github/aeharding/angular-ladda-lw/badge.svg?branch=master)](https://coveralls.io/github/aeharding/angular-ladda-lw?branch=master)
+[![npm version](https://badge.fury.io/js/angular-ladda-lw.svg)](https://badge.fury.io/js/angular-ladda-lw)
 [![Bower version](https://badge.fury.io/bo/angular-ladda-lw.svg)](https://badge.fury.io/bo/angular-ladda-lw)
 
 ![Preview](http://i.imgur.com/6QZvPo4.gif)
@@ -16,6 +18,10 @@ A lightweight ladda alternative for Angular. [[Demo]](http://aeharding.github.io
 
 ```
 bower install angular-ladda-lw --save
+```
+or
+```
+npm install angular-ladda-lw --save
 ```
 
 ### Files
