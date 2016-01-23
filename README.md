@@ -48,8 +48,11 @@ angular.module('myApp', ['angular-ladda-lw']);
 this.doThing = thing => {
   this.loading = true;
   MyService.doThing(thing).then(res => {
-   this.loading = false;
-   // TODO
+    // TODO
+  }, err => {
+    // Stuff broke
+  }).finally(() => {
+    this.loading = false;
   });
 }
 ```
