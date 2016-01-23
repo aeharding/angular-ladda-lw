@@ -7,13 +7,37 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/aeharding/angular-ladda-lw/0.1.0/dist/angular-ladda-lw.css">
     <script src="javascripts/scale.fix.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.js"></script>
+    <script src="//cdn.rawgit.com/aeharding/angular-ladda-lw/0.1.0/dist/angular-ladda-lw.js"></script>
+
+    <script>
+    angular.module('demoSite', ['ladda-lw']);
+    </script>
+
+    <style>
+    .demo-button {
+      font-size: 2em;
+      border: 0;
+      background-color: #0085c3;
+      padding: 0.5em 1em;
+      color: white;
+      cursor: pointer;
+    }
+    .demo-button:disabled {
+      background-color: #aaa;
+      cursor: default;
+    }
+    </style>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app="demoSite">
     <div class="wrapper">
       <header>
         <h1 class="header">Angular-ladda-lw</h1>
@@ -34,6 +58,15 @@
 <a id="angular-ladda-lw" class="anchor" href="#angular-ladda-lw" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>angular-ladda-lw</h1>
 
 <p>A lightweight ladda alternative for Angular.</p>
+
+<button class="demo-button" ng-click="l = !l" ladda="l">Hello, world!</button>
+
+<br><br>
+
+<label>
+  Set ladda
+  <input type="checkbox" ng-model="l">
+</label>
 
 <h3>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h3>
