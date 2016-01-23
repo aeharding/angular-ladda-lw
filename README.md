@@ -35,3 +35,7 @@ npm install -g babel-cli babel-preset-es2015 node-sass uglify-js sass-lint eslin
 npm install
 npm start
 ```
+
+## Bonus!
+
+The spinner is stolen from [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar), so if you decide to use that, this project will look consistent and professional. :)
