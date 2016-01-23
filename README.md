@@ -32,7 +32,7 @@ You can also use the `angular-ladda-lw.min.*` if you want.
 ## Develop
 
 ```
-npm install -g babel-cli babel-preset-es2015 node-sass uglify-js sass-lint eslint
+npm install -g babel-cli babel-preset-es2015 node-sass uglify-js sass-lint eslint karma-cli
 npm install
 npm start
 ```

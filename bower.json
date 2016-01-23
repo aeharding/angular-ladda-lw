@@ -15,5 +15,11 @@
     "test",
     "tests",
     "src"
-  ]
+  ],
+  "devDependencies": {
+    "angular": "~1.4.9",
+    "angular-animate": "~1.4.9",
+    "angular-mocks": "~1.4.9",
+    "jquery": "~2.2.0"
+  }
 }
