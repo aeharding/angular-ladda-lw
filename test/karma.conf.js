@@ -4,9 +4,10 @@ module.exports = function karmaConfig(config) {
     browsers: ['PhantomJS'],
     frameworks: ['jasmine'],
     preprocessors: {
-      'src/**/*.js': ['babel'],
+      'src/**/*.js': ['babel', 'coverage', 'coveralls'],
       'test/**/*.js': ['babel']
     },
+    reporters: ['dots', 'coverage', 'coveralls'],
     babelPreprocessor: {
       options: {
         presets: ['es2015'],
@@ -29,6 +30,10 @@ module.exports = function karmaConfig(config) {
     ],
     phantomjsLauncher: {
       exitOnResourceError: true,
+    },
+    coverageReporter: {
+      type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
+      dir: 'coverage/'
     },
     singleRun: true,
   });
