@@ -5,7 +5,7 @@ describe('angular-ladda-lw', function() {
   let $compile;
   let $rootScope;
 
-  beforeEach(module('ladda-lw'));
+  beforeEach(module('angular-ladda-lw'));
 
   beforeEach(inject(function(_$compile_, _$rootScope_) {
     $compile = _$compile_;
