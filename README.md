@@ -1,5 +1,7 @@
 # angular-ladda-lw
 
+[![Build Status](https://travis-ci.org/aeharding/angular-ladda-lw.svg?branch=master)](https://travis-ci.org/aeharding/angular-ladda-lw)
+
 A lightweight ladda alternative for Angular.
 
 ### Requirements
@@ -23,3 +25,11 @@ bower_components/angular-ladda-lw/dist/angular-ladda-lw.css
 ```
 
 You can also use the `angular-ladda-lw.min.*` if you want.
+
+## Develop
+
+```
+npm install -g babel-cli node-sass uglify-js sass-lint eslint
+npm install
+npm start
+```
