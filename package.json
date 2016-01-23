@@ -4,15 +4,16 @@
   "description": "A lightweight, native Angular ladda indicator",
   "main": "index.js",
   "scripts": {
-    "test": "npm run-script lint",
+    "test": "npm run-script lint && npm run-script test:unit",
+    "test:unit": "karma start test/karma.conf.js",
     "lint": "npm run-script lint:js && npm run-script lint:sass",
-    "lint:js": "./node_modules/.bin/eslint src/*.js",
+    "lint:js": "./node_modules/.bin/eslint src/*.js test/*.js --ignore-pattern test/karma.conf.js",
     "lint:sass": "sass-lint src/*.scss --config .sass-lint.yml -v",
-    "start": "npm run-script sass && npm run-script sass-min && npm run-script babel && npm run-script uglify",
+    "start": "npm run-script sass && npm run-script sass:min && npm run-script babel && npm run-script uglify",
     "babel": "babel --presets es2015 src/angular-ladda-lw.js --out-file dist/angular-ladda-lw.js",
     "uglify": "uglifyjs --compress --mangle --output dist/angular-ladda-lw.min.js -- dist/angular-ladda-lw.js",
     "sass": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style expanded src/angular-ladda-lw.scss dist/angular-ladda-lw.css",
-    "sass-min": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style compressed src/angular-ladda-lw.scss dist/angular-ladda-lw.min.css"
+    "sass:min": "node-sass --include-path node_modules/bourbon/app/assets/stylesheets --output-style compressed src/angular-ladda-lw.scss dist/angular-ladda-lw.min.css"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,11 @@
     "eslint-config-defaults": "^8.0.2",
     "eslint-plugin-react": "^3.15.0",
     "karma": "^0.13.19",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.3",
     "node-bourbon": "^4.2.3",
+    "phantomjs": "^1.9.19",
     "sass-lint": "^1.4.0"
   }
 }

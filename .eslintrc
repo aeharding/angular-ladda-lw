@@ -3,3 +3,5 @@
   - "defaults/configurations/airbnb/es6"
 "globals":
   angular: false
+"rules":
+  space-before-function-paren: 0
