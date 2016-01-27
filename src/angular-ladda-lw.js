@@ -1,4 +1,4 @@
-angular.module('angular-ladda-lw', ['ngAnimate']).directive('ladda', function laddaDirective() {
+angular.module('angular-ladda-lw', ['ngAnimate']).directive('ladda', function laddaDirective($timeout) {
   return {
     restrict: 'A',
     scope: {
@@ -28,10 +28,30 @@ angular.module('angular-ladda-lw', ['ngAnimate']).directive('ladda', function la
       loadingWrap.append(loading);
       element.append(loadingWrap);
 
-      return function link(scope, iElement) {
+      return function link(scope, iElement, iAttrs) {
         scope.$watch('ladda', function laddaWatch(l) {
+          if (!angular.isDefined(l)) return;
+
           iElement.attr('disabled', l ? 'disabled' : false);
+
+          // When the button also have the ng-disabled directive it needs to be
+          // re-evaluated since the disabled attribute is removed
+          if (!l && iAttrs.ngDisabled && scope.$parent.$eval(iAttrs.ngDisabled)) {
+            iElement.attr('disabled', 'disabled');
+          }
         });
+
+        if (iAttrs.ngDisabled) {
+          scope.$parent.$watch(iAttrs.ngDisabled, function ngDisabledWatch(d) {
+            if (d === false && scope.ladda) {
+              // We have to wait for ngDisabled to propagate. I wish there was a
+              // better way to do this. Ideas?
+              $timeout(() => {
+                iElement.attr('disabled', 'disabled');
+              });
+            }
+          });
+        }
       };
     },
   };
