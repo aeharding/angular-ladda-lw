@@ -14,6 +14,11 @@ A lightweight ladda alternative for Angular. [[Demo]](http://aeharding.github.io
   * Angular
   * ngAnimate
 
+### Browsers
+
+  * IE10+, Chrome, FF, Opera with animations
+  * IE9 without animations (but functional)
+
 ## Install
 
 ```
@@ -59,11 +64,28 @@ this.doThing = thing => {
 
 ## Develop
 
+### Dependencies
+
 ```
-npm install -g babel-cli babel-preset-es2015 node-sass uglify-js sass-lint eslint karma-cli
+npm install -g babel-cli babel-preset-es2015 node-sass uglify-js sass-lint eslint karma-cli http-server
 npm install
+```
+
+### Develop
+
+```
 npm start
 ```
+
+### Run demo server
+
+From project directory:
+
+```
+http-server . -o
+```
+
+Then go to `http://localhost:8080/demo/`
 
 ## Bonus!
 

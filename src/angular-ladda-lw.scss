@@ -21,7 +21,14 @@ $animation-height: 1em;
 }
 
 .ladda-lw__loading {
-  opacity: 0;
+  &,
+  &::after {
+    // must declare opacity on both
+    // (thanks, IE)
+    opacity: 0;
+
+    transition: opacity 200ms linear;
+  }
 
   &::after {
     @include loading(inherit, 400ms, 2px);
@@ -36,17 +43,23 @@ $animation-height: 1em;
 }
 
 .ladda-lw__loading-wrap {
+  @include transform(translate(-50%, -50%));
+
   position: absolute;
   left: 50%;
   top: 50%;
   height: 1.2em;
   width: 1.2em;
-  transform: translate(-50%, -50%);
 }
 
 .ladda-lw__loading--up {
   @include animation(loading-up 200ms ease);
   @include animation-fill-mode(forwards);
+
+  &,
+  &::after {
+    opacity: 1;
+  }
 }
 
 .ladda-lw__loading--up-remove {
@@ -59,67 +72,70 @@ $animation-height: 1em;
   @include animation-fill-mode(forwards);    
 }
 
+.ladda-lw__text {
+  transition: opacity 200ms linear;
+}
+
 .ladda-lw__text--up {
   @include animation(text-up 200ms ease);
   @include animation-fill-mode(forwards);
+
+  &,
+  &::after {
+    opacity: 0;
+  }
 }
 
 @include keyframes(text-up) {
   0% {
-    opacity: 1;
-    transform: translate(0, 0);
+    @include transform(translate(0, 0));
+
     display: block;
   }
 
   100% {
-    opacity: 0;
-    transform: translate(0, -$animation-height);
+    @include transform(translate(0, -$animation-height));
+
     display: none;
   }
 }
 
 @include keyframes(text-down) {
   0% {
-    opacity: 0;
-    transform: translate(0, -$animation-height);
+    @include transform(translate(0, -$animation-height));
   }
 
   100% {
-    opacity: 1;
-    transform: translate(0, 0);
-    }
+    @include transform(translate(0, 0));
+  }
 }
 
 @include keyframes(loading-up) {
   0% {
-    opacity: 0;
-    transform: translate(0, $animation-height);
+    @include transform(translate(0, $animation-height));
   }
 
   100% {
-    opacity: 1;
-    transform: translate(0, 0);
+    @include transform(translate(0, 0));
   }
 }
 
 @include keyframes(loading-down) {
   0% {
-    opacity: 1;
-    transform: translate(0, 0);
+    @include transform(translate(0, 0));
   }
 
   100% {
-    opacity: 0;
-    transform: translate(0, $animation-height);
+    @include transform(translate(0, $animation-height));
   }
 }
 
 @include keyframes(loading-bar-spinner) {
   0% {
-    transform: rotate(0deg);
+    @include transform(rotate(0deg));
   }
 
   100% {
-    transform: rotate(360deg);
+    @include transform(rotate(360deg));
   }
 }

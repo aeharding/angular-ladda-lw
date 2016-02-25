@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>angular-ladda-lw engineering page</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+  <script src="../dist/angular-ladda-lw.js"></script>
+
+  <script>
+    angular.module('app', ['ngAnimate', 'angular-ladda-lw']);
+  </script>
+
+  <link rel="stylesheet" href="../dist/angular-ladda-lw.css">
+
+  <style>
+    .demo-button {
+      font-size: 2em;
+      border: 0;
+      background-color: #0085c3;
+      padding: 0.5em 1em;
+      color: white;
+      cursor: pointer;
+    }
+    .demo-button:disabled {
+      background-color: #aaa;
+      cursor: default;
+    }
+    </style>
+</head>
+<body ng-app="app">
+  
+  <button class="demo-button" ng-click="l = !l" ladda="l">Hello, world!</button>
+
+  <br><br>
+
+  <label>
+    Set ladda
+    <input type="checkbox" ng-model="l">
+  </label>
+
+</body>
+</html>
