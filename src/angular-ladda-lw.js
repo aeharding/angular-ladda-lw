@@ -1,4 +1,4 @@
-angular.module('angular-ladda-lw', ['ngAnimate']).directive('ladda', function laddaDirective($timeout) {
+angular.module('angular-ladda-lw', ['ngAnimate']).directive('ladda', ['$timeout', function laddaDirective($timeout) {
   return {
     restrict: 'A',
     scope: {
@@ -55,4 +55,4 @@ angular.module('angular-ladda-lw', ['ngAnimate']).directive('ladda', function la
       };
     },
   };
-});
+}]);
